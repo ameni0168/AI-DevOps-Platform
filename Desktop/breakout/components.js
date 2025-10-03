@@ -1,0 +1,11 @@
+const wall_hit = new Audio('sounds/sounds_wall.mp3');
+const brick_hit = new Audio('sounds/sounds_brick_hit.mp3');
+const life_lost = new Audio('sounds/sounds_life_lost.mp3');
+const win = new Audio('sounds/sounds_win.mp3');
+const paddle_hit = new Audio('sounds/sounds_paddle_hit.mp3');
+const level_img= new Image();
+level_img.src="img/level.png";
+const life_img= new Image();
+life_img.src="img/life.png";
+const score_img= new Image();
+score_img.src="img/score.png";

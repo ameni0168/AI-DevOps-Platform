@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+
+        <title>Brick breakout</title>
+    </head>
+    <style>
+    #nameInputContainer {
+        text-align: center;
+        
+        margin-top: 20px;
+    }
+    #breakout {
+        display: none;
+        text-align: center;
+        margin-top: 20px;
+    }
+    #startGame {
+        padding: 10px 20px;
+        background-color: #842E1B;
+        color: #e9d3d3;
+        border:2px;
+        border-color:#e9d3d3 ;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+    #startGame:hover {
+        background-color: #ed5a16;
+    }
+    </style>
+
+    <body>
+        <section class="game" id="game">
+            <button id="rules-btn" class="btn rules-btn">Règles de jeu</button>
+            <div id="rules" class="rules">
+                <h2>Règles de jeu</h2>
+                <p>Utilisez les touches gauche ◄ et droite ► du clavier pour diriger la planche <br>
+                    La balle doit rebondir sur la planche pour rentrer briser les briques</p>
+                <p>Si elle tombe à même le sol, vous perdez une vie. Le jeu s'arrete dès que vous n'avez plus de vie</p>
+                <button id="close-btn" class="btn close-btn">Quitter</button>
+            </div>
+            
+            <div class="sound-container">
+                <img src="img/sound_on.png" alt="Sound Image" id="sound">
+            </div>
+            
+            <div id="game-over">
+                <img src="img/you-won.png" alt="" id="you-won">
+                <img src="img/game-over.png" alt="" id="you-lose">
+                <div id="restart">Rejouer</div>
+            </div>
+            <div id="nameInputContainer">
+                <h1>Bienvenue dans le jeu Breakout!</h1>
+                <label for="playerName">Entrez votre nom: </label>
+                <input type="text" id="playerName" placeholder="Nom du joueur" />
+                <button id="startGame">Commencer</button>
+            </div>
+              
+              <!-- Conteneur pour le jeu (initialement caché) -->
+            <div id="breakout">
+                <h2>Le jeu commence !</h2>
+                <p>Vous êtes prêt à jouer, votre jeu sera ici !</p>
+                <!-- Le jeu (canvas, graphique, etc.) pourrait être ajouté ici -->
+            </div>
+
+            <canvas id="canvas" width="600" height="500"></canvas>
+        </section>
+    
+        <script src="components.js"></script>
+        <script src="game.js"></script>
+        <script>
+            // Ajouter un écouteur pour le bouton Commencer
+            document.getElementById("startGame").addEventListener("click", function () {
+              const playerName = document.getElementById("playerName").value.trim();
+          
+              if (playerName !== "") {
+                alert(`Bienvenue, ${playerName}! Le jeu commence.`);
+                document.getElementById("nameInputContainer").style.display = "none";
+                document.getElementById("breakout").style.display = "block";
+                gameStarted = true; // Permet de commencer la boucle
+                loop(); // Démarre le jeu
+              } else {
+                alert("Veuillez entrer un nom valide avant de commencer !");
+              }
+            });
+          </script>
+    </body>
+</html>

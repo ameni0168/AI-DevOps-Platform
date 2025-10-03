@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cassebrique</title>
+    <style>
+        /* Appliquer l'image de fond à toute la page */
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('background/img/cassebrique.jpg');
+            background-size: cover; /* L'image couvre tout l'écran */
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            flex-direction: column; /* Alignement vertical pour le titre et le bouton */
+            justify-content: center;
+            align-items: center;
+            color: #c42c11;
+            font-family: Arial, sans-serif;
+            text-align: center; /* Centrer le texte directement sur le body */
+        }
+
+        /* Titre principal */
+        .title {
+            font-size: 50px;
+            font-weight: bold;
+        }
+
+        .title b {
+            color: #0f0e0e; /* Couleur différente pour la deuxième partie du titre */
+        }
+
+        /* Style du bouton Play */
+        .play-btn {
+            width: 150px; /* Taille de l'image */
+            cursor: pointer;
+            transition: transform 0.2s ease-in-out;
+            margin-top: 20px; /* Espacement entre le titre et le bouton */
+        }
+
+        .play-btn:hover {
+            transform: scale(1.1); /* Effet de survol pour agrandir l'image */
+        }
+
+        /* Pour s'assurer que tout est bien centré même sur mobile */
+        @media (max-width: 600px) {
+            .title {
+                font-size: 35px; /* Réduire la taille du texte sur les petits écrans */
+            }
+            .play-btn {
+                width: 120px; /* Réduire la taille du bouton play sur mobile */
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1 class="title">Casse<b>brique</b></h1>
+    <a href="home.html"><img src="background\img\play.png" alt="Play Button" class="play-btn"></a>
+</body>
+</html>
