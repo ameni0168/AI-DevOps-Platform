@@ -1,0 +1,25 @@
+.venv/
+__pycache__/
+*.pyc
+.env
+# Node / Angular
+node_modules/
+dist/
+.angular/
+coverage/
+
+# Python
+venv/
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# IDE and logs
+.idea/
+*.log
+
+# Environment variables
+.env
+.env.*
+!.env.example
